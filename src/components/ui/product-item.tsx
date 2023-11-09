@@ -9,9 +9,9 @@ interface ProductItemProps {
 
 const ProductItem = ({product}: ProductItemProps) => {
     return (
-        <div className="flex flex-col gap-2 max-w-[156px]">
+        <div className="flex flex-col gap-2 max-w-[170px]">
             {/* IMAGEM */}
-            <div className="relative bg-accent rounded-lg h-[170px] w-[156px] flex items-center justify-center">
+            <div className="relative bg-accent rounded-lg h-[170px] w-[170px] flex items-center justify-center">
                 {/* sempre que quiser utilizar medidas dinamicas, 
                 coloca height e width 0, o sizes 100vw 
                 e estiliza pelo className
@@ -49,16 +49,16 @@ const ProductItem = ({product}: ProductItemProps) => {
             <div className="flex items-center gap-2">
                 {product.discountPercentage > 0 ? (
                     <>
-                        <p className="font-semibold">
+                        <p className="font-semibold overflow-hidden text-ellipsis whitespace-nowrap">
                             R$ {product.totalPrice.toFixed(2)}
                         </p>
                         
-                        <p className="line-through opacity-75 text-xs">
+                        <p className="line-through opacity-75 text-xs overflow-hidden text-ellipsis whitespace-nowrap">
                             R$ {Number(product.basePrice).toFixed(2)}
                         </p>
                     </>
                 ) : (
-                    <p className="font-semibold text-sm">
+                    <p className="font-semibold text-sm overflow-hidden text-ellipsis whitespace-nowrap">
                         R$ {product.basePrice.toFixed(2)}
                     </p>
                 )}
