@@ -6,6 +6,7 @@ import { ArrowDownIcon } from "lucide-react";
 interface ProductItemProps {
     product: ProductWithTotalPrice
 }
+// 1:46
 
 const ProductItem = ({product}: ProductItemProps) => {
     return (
