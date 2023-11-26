@@ -111,9 +111,17 @@ const Header = () => {
                 </h1>
             </Link>
             
-            <Button size="icon" variant="outline">
-                <ShoppingCartIcon className="h-5 w-5"/>
-            </Button>
+            <Sheet>
+                <SheetTrigger>
+                    <Button size="icon" variant="outline">
+                        <ShoppingCartIcon className="h-5 w-5"/>
+                    </Button>
+                </SheetTrigger>
+
+                <SheetContent>
+                    <h1>Cart</h1>
+                </SheetContent>
+            </Sheet>
 
         </Card>
     )
