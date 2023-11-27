@@ -14,6 +14,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { Separator } from "./separator";
 import Link from "next/link";
+import Carts from "./carts";
 
 const Header = () => {
 
@@ -119,7 +120,7 @@ const Header = () => {
                 </SheetTrigger>
 
                 <SheetContent>
-                    <h1>Cart</h1>
+                    <Carts/>
                 </SheetContent>
             </Sheet>
 
