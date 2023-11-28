@@ -3,7 +3,7 @@ import { Badge } from "./badge"
 import { CartContext } from "@/providers/cart"
 import { useContext } from "react";
 
-const Carts = () => {
+const Cart = () => {
 
     const { products } = useContext(CartContext);
     
@@ -17,13 +17,13 @@ const Carts = () => {
                     Catálogo
             </Badge>
             {/* RENDERIZAR PRODUTOS */}
-            {products.map(product => 
+            {products.map((product) => (
                 <h1 key={product.id}>
                     {product.name}
                 </h1>
-            )}
+            ))}
         </div>
     )
 }
 
-export default Carts
+export default Cart

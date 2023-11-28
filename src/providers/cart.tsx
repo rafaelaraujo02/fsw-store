@@ -12,14 +12,14 @@ interface ICartContext {
     cartBasePrice: number;
     cartTotalPrice: number;
     cartTotalDiscount: number;
-    addProductToCart: (product: CartProduct) => void
+    addProductToCart: (product: CartProduct) => void;
 }
 
 export const CartContext = createContext<ICartContext>({
     products: [],
+    cartTotalPrice: 0,
     cartBasePrice: 0,
     cartTotalDiscount: 0,
-    cartTotalPrice: 0,
     addProductToCart: () => {},
 })
 
@@ -27,18 +27,20 @@ const CartProvider = ({children}: {children: ReactNode}) => {
     
     const [products, setProducts] = useState<CartProduct[]>([])
 
-    const addProductsToCart = (product: CartProduct) => {
+    const addProductToCart = (product: CartProduct) => {
         setProducts((prev) => [...prev, product])
     }
 
     return(
-        <CartContext.Provider value={{
-            products,
-            addProductToCart() {},
-            cartTotalDiscount: 0,
-            cartTotalPrice: 0,
-            cartBasePrice: 0
-        }}>
+        <CartContext.Provider 
+            value={{
+                products,
+                addProductToCart,
+                cartTotalDiscount: 0,
+                cartTotalPrice: 0,
+                cartBasePrice: 0
+            }}
+        >
             {children}
         </CartContext.Provider>
     )
