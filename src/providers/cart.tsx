@@ -34,7 +34,7 @@ export const CartContext = createContext<ICartContext>({
     increaseProductQuantity: () => {},
     removeProductFromCart: () => {},
 })
-//2:14
+//22:44
 const CartProvider = ({children}: {children: ReactNode}) => {
     
     const [products, setProducts] = useState<CartProduct[]>([])
