@@ -6,6 +6,7 @@ import CartItem from "./cart-item";
 import { computeProductTotalPrice } from "@/helpers/product";
 import { Separator } from "./separator";
 import { ScrollArea } from "./scroll-area";
+import { Button } from "./button";
 
 const Cart = () => {
 
@@ -64,7 +65,7 @@ const Cart = () => {
                     <p>Total</p>
                     <p>R$ {total.toFixed(2)}</p>
                 </div>
-                
+                <Button className="uppercase font-bold mt-7">Finalizar Compra</Button>
             </div>
         </div>
     )
